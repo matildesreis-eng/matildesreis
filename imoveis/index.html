@@ -1,64 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Matildes Reis | Imóveis para locação</title>
-<meta name="description" content="Matildes Reis — soluções em engenharia ambiental, transportes, presentes e imóveis.">
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imóveis | Matildes Reis</title><link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<header><div class="container"><a class="logo" href="/">MATILDE REIS</a></div></header>
-
-<main>
-<section class="section">
-<div class="container">
-<span class="badge">IMÓVEIS PARA LOCAÇÃO</span>
-<h1>Encontre seu próximo lar</h1>
-<p>Apartamentos de 2 quartos para locação. Consulte os detalhes e acesse o anúncio para alugar.</p>
-<div class="property-grid">
-<article class="card">
-<div class="property-photo">FOTO DO APARTAMENTO — 1º ANDAR</div>
-<div class="property-info">
-<h2>Apartamento — 1º andar</h2>
-<p>2 quartos · Localização a informar</p>
-<div class="price">R$ 800/mês</div>
-<a class="btn" href="#" target="_blank" rel="noopener">ALUGUE AGORA</a>
-</div>
-</article>
-<article class="card">
-<div class="property-photo">FOTO DO APARTAMENTO — 2º ANDAR</div>
-<div class="property-info">
-<h2>Apartamento — 2º andar</h2>
-<p>2 quartos · Localização a informar</p>
-<div class="price">R$ 700/mês</div>
-<a class="btn" href="#" target="_blank" rel="noopener">ALUGUE AGORA</a>
-</div>
-</article>
-</div>
-<div class="card" style="margin-top:30px">
-<h2>Ficou com alguma dúvida?</h2>
-<p>Entre em contato pelo WhatsApp para saber mais sobre os apartamentos.</p>
-<a class="btn alt" href="#" target="_blank" rel="noopener">FALAR NO WHATSAPP</a>
-</div>
-</div>
-</section>
+<header class="site-header"><h1><span class="site-name">MATILDES REIS</span></h1><p>Imóveis para alugar</p></header>
+<main class="container"><section class="hero"><h2>Encontre seu próximo lar</h2><p>Confira os imóveis disponíveis para locação.</p></section>
+<section id="imoveis-lista" class="cards"></section>
 </main>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <strong>Matildes Reis</strong>
-    <div class="footer-links">
-      <a href="/">Início</a>
-      <a href="/engenharia/">Engenharia Ambiental</a>
-      <a href="/transportes/">Transportes & Mobilidade</a>
-      <a href="/presentes/">Presentes</a>
-      <a href="/imoveis/">Imóveis</a>
-    </div>
-    <div class="small">Soluções integradas: mobilidade, meio ambiente e estilo de vida.</div>
-  </div>
-</footer>
-
-</body>
-</html>
+<footer class="site-footer"><a href="../">Início</a><a href="../engenharia/">Engenharia Ambiental</a><a href="../transportes/">Transportes & Mobilidade</a><a href="../presentes/">Presentes</a><a href="../imoveis/">Imóveis</a></footer>
+<script src="../js/conteudo.js"></script>
+<script>
+const lista=document.getElementById('imoveis-lista');
+lista.innerHTML=IMOVEIS.map(i=>`<article class="card property-card"><div class="property-photo">${i.foto?`<img src="${i.foto}" alt="${i.titulo}">`:''}</div><div class="card-content"><h3>${i.titulo}</h3><p><strong>${i.quartos} quartos</strong> · ${i.andar}</p><p class="price">${i.preco}</p><a class="button" href="${i.linkQuintoAndar||whatsappLink('Olá! Tenho interesse em um imóvel para alugar.')}" target="_blank">ALUGUE AGORA</a></div></article>`).join('');
+</script>
+</body></html>
